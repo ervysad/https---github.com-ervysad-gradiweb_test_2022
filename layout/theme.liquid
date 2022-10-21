@@ -12,13 +12,23 @@
     {%- comment -%}
       StyleSheets load
     {%- endcomment -%}
-    <link rel="stylesheet" href="/assets/mycss.css">
-    <link rel="stylesheet" href="/assets/main-content.css">
-    <link rel="stylesheet" href="/assets/header.css">
-    <link rel="stylesheet" href="/assets/main-404.css">
-    <link rel="stylesheet" href="/assets/main-product.css">
-    <link rel="stylesheet" href="/assets/main-article.css">
-    <link rel="stylesheet" href="/assets/main-cart-items.css">
+    {%- comment -%}
+      <link rel="stylesheet" href="/assets/mycss.css">
+      <link rel="stylesheet" href="/assets/main-content.css">
+      <link rel="stylesheet" href="/assets/header.css">
+      <link rel="stylesheet" href="/assets/main-404.css">
+      <link rel="stylesheet" href="/assets/main-product.css">
+      <link rel="stylesheet" href="/assets/main-article.css">
+      <link rel="stylesheet" href="/assets/main-cart-items.css">
+    {%- endcomment -%}
+
+    {{ 'mycss.css' | asset_url | stylesheet_tag }}
+    {{ 'main-content.css' | asset_url | stylesheet_tag }}
+    {{ 'header.css' | asset_url | stylesheet_tag }}
+    {{ 'main-404.css' | asset_url | stylesheet_tag }}
+    {{ 'main-product.css' | asset_url | stylesheet_tag }}
+    {{ 'main-article.css' | asset_url | stylesheet_tag }}
+    {{ 'main-cart-items.css' | asset_url | stylesheet_tag }}
 
     {%- comment -%}
       Global Script
