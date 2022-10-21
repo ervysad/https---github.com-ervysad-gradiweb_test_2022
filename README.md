@@ -32,7 +32,7 @@ https://shopify.dev/
 Aplicación web desarrollada con lenguajes como HTML5, CSS y JAVASCRIPT. Con arquitectura y compatibilidad en la plataforma de e-commerce Shopify. La aplicación ha sido desarrollada siguiendo los lineamientos y estructuras de un proyecto de Shopify, a través del uso de lanzadores JSON y Templates en Liquid. La tienda de prueba tiene interacción entre usuario (log-in and sign-in), los productos de la tienda, el carrito y pasarela de pagos; además de mostrar información a través de blogs personalizables a través de bloques pertenecientes al esquema liquid. 
 ### 4.	Información de ambientes y usuarios
 	Ambiente	IP / Hostname / URL
-Origen	Desarrollo	https://teststorebrianvalencia.myshopify.com/
+Origen	Desarrollo	https://teststorebrianvalencia.myshopify.com/ or https://ckhs9g7qsoitjdkh-62655594654.shopifypreview.com
 Destino	QA	Por definir
 
 
