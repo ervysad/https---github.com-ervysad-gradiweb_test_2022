@@ -29,7 +29,7 @@
                   </a>
                   <a href="{{ item.url }}">
                     {% if item.image %}
-                      <img src="{{ item.image | img_url:'medium' }}" alt="{{ item.title | escape }}" loading="lazy" width="150" height="150">
+                      <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title | escape }}" loading="lazy" width="150" height="150">
                     {% else %}
                       {{ 'product-1' | placeholder_svg_tag }}
                     {% endif %}
