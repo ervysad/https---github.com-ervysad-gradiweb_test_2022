@@ -1,0 +1,73 @@
+<div class="header">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark"> 
+        <a class="navbar-brand" href="/">{{ shop.name }}</a> 
+        <!-- Hidden Responsive button -->  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
+          <span class="navbar-toggler-icon"></span> 
+        </button> 
+       
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+          <ul class="navbar-nav"> 
+           {%- for link in section.settings.menu.links -%}
+                {% if link.links != blank %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ link.title }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            {%- for childlink in link.links -%}
+                                <a class="dropdown-item" href={{ childlink.url }}>{{ childlink.title }}</a>
+                            {%- endfor -%}
+                        </div>
+                      </li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href={{ link.url }}>{{ link.title }} <span class="sr-only">(current)</span></a></li> 
+                {% endif %} 
+                
+           {%- endfor -%}
+          </ul> 
+    
+        </div> 
+
+        <div class="customer_state">
+            {%- comment -%} ? check if the user is logged in and the store has customers enabled  {%- endcomment -%}
+            {% if shop.customer_accounts_enabled %}
+               {% if customer %} {%- comment -%} if there is a customer: {%- endcomment -%}
+                    <a href="{{ routes.account_url }}">Account</a>
+                    {{ 'Log Out' | customer_logout_link | replace: '<a', '<a class="login"' }}
+   
+               {% else %}
+                   {{ 'Log in' | customer_login_link | replace: '<a', '<a class="btn btn-light"' }}
+                   {{ 'Sign Up' | customer_register_link | replace: '<a', '<a class="btn btn-light"' }}
+
+               {% endif %}
+            {% endif %}
+           </div>
+
+
+        <div class="icon-mine">
+            <a href="{{ routes.cart_url }}">
+                {% render 'icon-cart-mine' %}
+            </a>
+        </div>
+       
+        </div> 
+    </nav>
+
+
+</div>
+
+{% schema %}
+{
+    "name": "Header",
+    "settings": [
+        {
+            "type": "link_list",
+            "id": "menu",
+            "default": "main-menu",
+            "label": "Heading Navigation Menu"
+        }
+    ]
+}
+{% endschema %}

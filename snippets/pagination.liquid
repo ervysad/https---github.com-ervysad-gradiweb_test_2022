@@ -1,0 +1,16 @@
+{% if pagination.pages > 0 %}
+  <div class="col"></div>
+  <div class="col-sm-10 col-lg-4 navbuttons">
+    <nav role="navigation">
+      {% if pagination.previous %}
+        <a href="{{ pagination.previous.url }}" class="btn btn-dark">Prev</a>
+      {% endif %}
+      {% if pagination.next %}
+        <a href="{{ pagination.next.url }}" class="btn btn-dark">Next</a>
+      {% endif %}
+
+    </nav>
+  </div>
+
+  <div class="col"></div>
+{% endif %} 

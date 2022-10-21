@@ -1,0 +1,44 @@
+<div class="subsection404">
+  <h1>{{ "templates.404.title" | t }}
+  </h1>
+  <p>Page not found</p>
+  <p>{{ "templates.404.subtext" | t }}
+  </p>
+  <a href="{{ routes.all_products_collection_url }}" class="button">
+    {{ 'general.continue_shopping' | t }}
+  </a>
+  <br>
+  <a style="margin-top: 2rem;" href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Home</a>
+</div>
+
+
+{%- comment -%}
+  <div class="subsection404">
+  <h1>
+  {{ section.settings.main_title }}
+  </h1>
+  <p>{{ section.settings.subtext_title }}
+  </p>
+  <a href="{{ routes.all_products_collection_url }}" class="button">
+  {{ 'general.continue_shopping' | t }}
+  </a>
+  </div>{%- endcomment -%}
+
+{% schema %}
+  {
+    "name": "Template_404",
+    "settings": [
+      {
+        "type": "text",
+        "id": "main_title",
+        "default": "This is 404",
+        "label": "404 main title"
+      }, {
+        "type": "text",
+        "id": "subtext_title",
+        "default": "The page u'r looking 4 is not found",
+        "label": "404 main subtitle"
+      }
+    ]
+  }
+{% endschema %} 

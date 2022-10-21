@@ -1,0 +1,50 @@
+.cart_content{
+    padding-top: 0;
+    padding-bottom: 0;
+ 
+}
+
+.cart_content h2 {
+    font-family: 'Balechin Royalo', sans-serif;
+    
+}
+
+
+.cart_content {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    text-align: center;
+}
+
+
+.cart_content h1 {
+    font-family: 'Balechin Royalo', sans-serif;
+    position: relative;
+}
+
+.centeredi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vertically{
+    margin-top: 5rem;
+    width: 5rem;
+    font-size: 1.5rem;
+}
+
+h3{ 
+    position: relative;
+    left: 30%;
+}
+
+.btn-square-sm {
+   
+    max-width: 100% !important;
+    max-height: 100% !important;
+    text-align: center;
+    padding: 0px;
+    font-size:7px;
+    }

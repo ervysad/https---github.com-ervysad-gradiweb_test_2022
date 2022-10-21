@@ -1,0 +1,44 @@
+{% paginate collection.products by 12 %}
+  {% for product in collection.products %}
+    <div style="display:inline-block">
+      <div class="card" style="width: 18rem; height: 35rem;">
+        <img src="{{product.featured_image | img_url:"medium"}}" alt="feature_image.alt" loading="lazy" width="{{ image.width }}" height="250">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{{product.url}}">{{ product.title }}
+            </a>
+          </h5>
+          <small>{{ product.vendor }}
+          </small>
+          <p class="card-text">{{ product.description | truncatewords: 15  }}
+          </p>
+          <h4>{{ product.price | money}}
+          </h4>
+          <a href="#" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    {%- comment -%}
+      <div>
+      {% if product.featured_image %}
+      <img src="{{product.featured_image | img_url:"medium"}}" alt="feature_image.alt" loading="lazy" width="{{ image.width }}" height="{{ image.height }}">
+      {% endif %}
+      <br>
+      <span>{{ product.vendor }}
+      </span>
+      <br>
+      <a href="{{product.url}}">{{ product.title }}
+      </a>
+      </div>
+    {%- endcomment -%}
+
+
+  {% else %}
+    <h1>Not products found in this store.</h1>
+  {% endfor %}
+
+  {% render 'pagination', pagination: paginate %}
+{% endpaginate %} 

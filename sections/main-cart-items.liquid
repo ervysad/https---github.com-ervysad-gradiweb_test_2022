@@ -1,0 +1,81 @@
+{% if cart.item_count > 0 %}
+  <div class="cart_content row" style="padding-top: 1rem; padding-bottom: 1rem">
+    <div class="col-md-6 col-sm-12">
+      <h2>Your Cart</h2>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <div style="">
+        <a class="btn btn-secondary btn-square-sm" href="{{ routes.all_products_collection_url }}">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+  <div class=" cart_content row" style="padding-top: 0; padding-bottom: 0;">
+    <div class="col" style="   padding-top: 0; padding-bottom: 0; ">
+      <form action="{{ routes.cart_url }}" method="POST" novalidate>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total Price</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {% for item in cart.items %}
+              <tr>
+                <td class="centeredi">
+                  <a href="{{ item.url }}">{{ item.title }}
+                  </a>
+                  <a href="{{ item.url }}">
+                    {% if item.image %}
+                      <img src="{{ item.image | img_url:'medium' }}" alt="{{ item.title | escape }}" loading="lazy" width="150" height="150">
+                    {% else %}
+                      {{ 'product-1' | placeholder_svg_tag }}
+                    {% endif %}
+                  </a>
+                  <a style="color: red;" href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0">Remove</a>
+
+                </td>
+                <td>
+                  <input class="vertically" type="number" name="updates[]" value="{{ item.quantity }}" min="1" id="update-{{ forloop.index }}">
+                </td>
+                <td>
+                  <h3 class="vertically">
+                    {{ item.line_price | money }}
+                  </h2>
+
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-md-3 col-sm-8 col-lg-3" style="text-align: start; margin-top: 1rem;margin-bottom;: 1rem; margin: 1rem">
+            <h2 style="font-family: 'Montserrat', 'serif';">Subtotal:
+                {{ cart.total_price | money }}
+              </h2>
+    
+              <button type="submit" name="update" style="margin-bottom: 1rem; width:100%" type="button" class="btn btn-outline-secondary">Update</button>
+              <br>
+              <button type="submit" name="checkout" style="margin-bottom: 1rem; width:100%" type="button" class="btn btn-success">Checkout</button>
+            </div>
+          </div>
+            
+        </div>
+      
+      
+h
+        
+      </form>
+    </div>
+  </div>
+
+{% else %}
+  <h1>Your cart is empty...</h1>
+  <div>
+    <a class="btn btn-dark btn-square-sm" href="{{ routes.all_products_collection_url }}">Continue Shopping</a>
+  </div>
+{% endif %} 

@@ -1,0 +1,105 @@
+<article>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-sm-10 col-md-5 col-lg-5">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when "article_title" %}
+            {% if section.settings.main_title_check %}
+              <div class="blog_title">
+                <a href="{{ blog.url }}">{{ blog.title }}
+                </a>
+                <h1>{{ article.title }}
+                </div>
+
+              </h1>
+            {% endif %}
+
+          {% when "article_author" %}
+            <div class="blog_info">
+              {% if section.settings.author_check %}
+                <small>{{ article.author }}
+                </small>
+              {% endif %}
+            </div>
+
+          {% when "article_published_date" %}
+            <div class="blog_info">
+              <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'long' }}
+              </time>
+            </div>
+
+
+          {% when "Featured_image" %}
+
+            <img class="blog_img" src="{{ article.image | image_url: width: 480, height: 250 }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ article.image.alt }}" loading="lazy">
+
+
+
+          {% when "article_content" %}
+
+            <div class="blog_info">
+              <p>{{ article.content }}
+              </p>
+            </div>
+
+
+
+          {% else %}
+
+        {% endcase %}
+
+      {% endfor %}
+    </div>
+    <div class="col"></div>
+
+</article>
+
+
+
+{% schema %}
+  {
+    "name": "Template_Blog_Article",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "main_title_check",
+        "default": true,
+        "label": "Display Blog title"
+      }, {
+        "type": "checkbox",
+        "id": "author_check",
+        "default": true,
+        "label": "Display Blog Author"
+      }
+    ],
+
+
+    "blocks": [
+      {
+        "type": "article_title",
+        "name": "title",
+        "limit": 1
+      },
+      {
+        "type": "article_author",
+        "name": "author",
+        "limit": 1
+      },
+      {
+        "type": "article_published_date",
+        "name": "Published Date",
+        "limit": 1
+      },
+      {
+        "type": "Featured_image",
+        "name": "thumbnail",
+        "limit": 1
+      }, {
+        "type": "article_content",
+        "name": "Article Content",
+        "limit": 1
+      }
+    ]
+  }
+{% endschema %} 

@@ -1,0 +1,33 @@
+.header{
+    padding: 2rem;
+    text-align: center;
+    margin: 0;
+    margin-top: 10;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.header h1{
+    padding: 0;
+    color: white;
+    margin: 0;
+}
+
+
+.icon-mine{
+    width: 2rem;
+    margin-left: 1rem;
+}
+
+.login{
+    color:white;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.newclass{
+    background-color: red;
+}
+
+.customer_state .btn{
+    margin-left: 0.5rem;
+}

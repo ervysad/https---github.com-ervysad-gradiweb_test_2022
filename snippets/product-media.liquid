@@ -1,0 +1,6 @@
+{% case media.media_type %}
+  {% when 'image' %}
+    <img class="img-mini" src="{{ media | image_url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ media.preview_image.alt }}" loading="lazy">
+  {% else %}
+
+{% endcase %} 

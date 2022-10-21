@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "main": {
+      
+      "type": "main-article",
+      
+      "blocks": {
+        "title": {
+          "type": "article_title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": false
+          } 
+        },
+        "author":{
+          "type": "article_author"
+        },
+        "published_date": {
+          "type": "article_published_date"
+        },
+
+        "thumbnail": {
+          "type": "Featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        
+        "content": {
+          "type": "article_content"
+        }
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
