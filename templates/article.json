@@ -1,34 +1,44 @@
 {
   "sections": {
     "main": {
-      
       "type": "main-article",
-      
       "blocks": {
-        "title": {
+        "e5c08697-a09d-4209-9f87-50dabeefd60a": {
           "type": "article_title",
           "settings": {
-            "blog_show_date": true,
-            "blog_show_author": false
-          } 
-        },
-        "author":{
-          "type": "article_author"
-        },
-        "published_date": {
-          "type": "article_published_date"
-        },
-
-        "thumbnail": {
-          "type": "Featured_image",
-          "settings": {
-            "image_height": "adapt"
           }
         },
-        
-        "content": {
-          "type": "article_content"
+        "c17b6579-fbdc-4301-b7ca-9267afdf75dd": {
+          "type": "Featured_image",
+          "settings": {
+          }
+        },
+        "d31eab7c-c658-482d-8ac1-a440ea840e3b": {
+          "type": "article_author",
+          "settings": {
+          }
+        },
+        "45327a34-5c60-435d-a6b1-784d34be71f5": {
+          "type": "article_published_date",
+          "settings": {
+          }
+        },
+        "d672bac1-abdc-4e83-92c0-dbbccc5e2636": {
+          "type": "article_content",
+          "settings": {
+          }
         }
+      },
+      "block_order": [
+        "e5c08697-a09d-4209-9f87-50dabeefd60a",
+        "c17b6579-fbdc-4301-b7ca-9267afdf75dd",
+        "d31eab7c-c658-482d-8ac1-a440ea840e3b",
+        "45327a34-5c60-435d-a6b1-784d34be71f5",
+        "d672bac1-abdc-4e83-92c0-dbbccc5e2636"
+      ],
+      "settings": {
+        "main_title_check": true,
+        "author_check": true
       }
     }
   },
